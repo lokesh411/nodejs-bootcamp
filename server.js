@@ -92,6 +92,7 @@ app.use((req, res, next) => {
         }
         next()
     }
+    next()
     // else {
     //     return res.status(401).json({ success: false, message: "un-authenticated user" })
     // }
