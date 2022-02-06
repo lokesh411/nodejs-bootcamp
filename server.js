@@ -12,7 +12,7 @@ const JWT_SIGNING_KEY = process.env.JWT_SIGNING_KEY
 const app = express()
 
 app.use(express.json())
-app.use(cors({ origin: "https://docs.google.com" }))
+app.use(cors({ origin: "*" }))
 app.use(cookieParser())
 // app.use(express.static(path.join(__dirname, 'frontend/build')))
 // app.use(csp({
@@ -91,9 +91,10 @@ app.use((req, res, next) => {
             return res.status(401).json({ success: false, message: "Invalid session" })
         }
         next()
-    } else {
-        return res.status(401).json({ success: false, message: "un-authenticated user" })
     }
+    // else {
+    //     return res.status(401).json({ success: false, message: "un-authenticated user" })
+    // }
 })
 
 app.use('/api/user', userRouter)
