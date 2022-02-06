@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "echo 'Hello world before executing the script' && PORT=4000 node server.js",
+    "start": "echo 'Hello world before executing the script' && node server.js",
     "custom": "echo 'Hello world before executing the script'"
   },
   "author": "Lokesh",
