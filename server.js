@@ -33,6 +33,10 @@ console.log("file name in server.js file :: ", __filename)
 
 console.log("absolute path of marks.js file in server.js file is ::  ", path.join(__dirname, "routes/marks.js"))
 
+app.use('/health-check', (req, res) => {
+    return res.json({ message: "service is working fine" })
+})
+
 // app.use('/', (_req, res) => {
 //     return res.sendFile(path.join(__dirname, 'frontend/build'))
 // })
